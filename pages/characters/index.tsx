@@ -3,7 +3,11 @@ import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
 import {Header} from "../../components/Header/Header";
 import {API} from "../../assets/api/api";
 
-export const getStaticProps = async () => { // эта функция запускается самим nextJs на стороне сервера, если такой присутствует на самой странице в pages.
+//на стороне сервера:
+//getServerSideProps - вызывается при каждом запросе, данные менятся могут часто
+//getStaticProps - при создании билда, данные не меняются - при последующих запросах получаем кэш страницы
+
+export const getStaticProps = async () => { // в момент билда эта функция запускается самим nextJs на стороне сервера, если такой присутствует на самой странице в pages.
     const characters = await API.rickAndMorty.getCharacters() // получаем персонажей
     return {
         props: {
