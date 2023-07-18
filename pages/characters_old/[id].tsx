@@ -51,7 +51,7 @@ const Character = (props: PropsType) => {
 
     const characterId = router.query.id
 
-    const goToCharacters = () => router.push('/characters')
+    const goToCharacters = () => router.push('/characters_old')
 
     return (
         <PageWrapper>
