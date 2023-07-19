@@ -3,6 +3,7 @@ import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
 import {Header} from "../../components/Header/Header";
 import {API} from "../../assets/api/api";
 import {Card} from "../../components/Card/Card";
+import {getLayout} from "../../components/Layout/BaseLayout/BaseLayout";
 
 //на стороне сервера:
 //getServerSideProps - вызывается при каждом запросе, данные менятся могут часто
@@ -36,9 +37,9 @@ const Episodes = (props: PropsType) => {// на стороне UI берем п�
     })
     return <div>
         <PageWrapper>
-            <Header/> {/*заголовок страницы*/}
             {episodesList} {/* выводим список эпизодов*/}
         </PageWrapper>
     </div>
 }
+Episodes.getLayout = getLayout
 export default Episodes

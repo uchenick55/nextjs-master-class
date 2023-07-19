@@ -3,7 +3,7 @@ import {dehydrate, useQuery} from '@tanstack/react-query';
 import {LocationType, ResponseType} from 'assets/api/rick-and-morty-api';
 import {QueryClient} from '@tanstack/query-core';
 import {Card} from 'components/Card/Card';
-import {getLayout} from 'components/Layout/BaseLayout/BaseLayout';
+import {getLayout} from '../../components/Layout/BaseLayout/BaseLayout_old';
 
 const getLocations = () => {
     return fetch('https://rickandmortyapi.com/api/location', {

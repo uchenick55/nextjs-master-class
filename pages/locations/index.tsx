@@ -4,6 +4,7 @@ import {Header} from "../../components/Header/Header";
 import {dehydrate, useQuery} from "@tanstack/react-query";
 import {QueryClient} from "@tanstack/query-core";
 import {Card} from "../../components/Card/Card";
+import {getLayout} from "../../components/Layout/BaseLayout/BaseLayout";
 
 const getLocations = () => { // при этом вызове, у рнас в preview ответе нет данных. Они появляются уже после нового запроса на сервер
     return fetch('https://rickandmortyapi.com/api/location', {
@@ -38,9 +39,9 @@ const Locations = () => {
     })
     return <div>
         <PageWrapper>
-            <Header/>  {/*заголовок страницы*/}
            {locationsList}  {/*выводим список локаций*/}
         </PageWrapper>
     </div>
 }
+Locations.getLayout = getLayout
 export default Locations

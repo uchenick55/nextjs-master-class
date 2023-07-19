@@ -2,7 +2,7 @@ import {API} from 'assets/api/api';
 import {CharacterType, ResponseType} from 'assets/api/rick-and-morty-api';
 import {PageWrapper} from 'components/PageWrapper/PageWrapper';
 import {CharacterCard} from 'components/Card/CharacterCard/CharacterCard';
-import {getLayout} from 'components/Layout/BaseLayout/BaseLayout';
+import {getLayout} from '../../components/Layout/BaseLayout/BaseLayout_old';
 
 export const getStaticProps = async () => {
     const characters = await API.rickAndMorty.getCharacters()

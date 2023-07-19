@@ -3,6 +3,7 @@ import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
 import {Header} from "../../components/Header/Header";
 import {API} from "../../assets/api/api";
 import {CharacterCard} from "../../components/Card/CharacterCard/CharacterCard";
+import {getLayout} from "../../components/Layout/BaseLayout/BaseLayout";
 
 //на стороне сервера:
 //getServerSideProps - вызывается при каждом запросе, данные менятся могут часто
@@ -29,9 +30,10 @@ const Characters = (props: PropsType) => {// на стороне UI берем �
     })
     return <div>
         <PageWrapper>
-            <Header/>  {/*заголовок страницы*/}
            {characterList}  {/*выводим список персонажей*/}
         </PageWrapper>
     </div>
 }
+Characters.getLayout = getLayout
+//Home.getLayout = getSpecialLayout
 export default Characters
