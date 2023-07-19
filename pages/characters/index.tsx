@@ -2,6 +2,7 @@ import {CharacterType, ResponseType} from "../../assets/api/rick-and-morty-api";
 import {PageWrapper} from "../../components/PageWrapper/PageWrapper";
 import {Header} from "../../components/Header/Header";
 import {API} from "../../assets/api/api";
+import {CharacterCard} from "../../components/Card/CharacterCard/CharacterCard";
 
 //на стороне сервера:
 //getServerSideProps - вызывается при каждом запросе, данные менятся могут часто
@@ -22,9 +23,9 @@ type PropsType = { // типизируем ответ от getStaticProps
 const Characters = (props: PropsType) => {// на стороне UI берем пропсы - ответ от getStaticProps
     const {characters} = props // вынимаем персонажей из пропсов
     const characterList = characters.results.map(character=>{ // проходим по всем персонажам
-        return <div key={character.id}>  {/*ключ из id персонажей*/}
-            {character.name}  {/*выводим имена персонажей*/}
-        </div>
+        return <CharacterCard // отрисовка персонажей (более красиво)
+            key = {character.id}
+            character={character}/>
     })
     return <div>
         <PageWrapper>

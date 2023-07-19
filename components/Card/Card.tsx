@@ -5,7 +5,7 @@ type PropsType = {
   name: string;
 };
 
-export const Card = (props: PropsWithChildren<PropsType>) => {
+export const Card = (props: PropsWithChildren<PropsType>) => { // карточка отрисовки и эпизодов и локаций
   const { children, name } = props;
 
   return (
